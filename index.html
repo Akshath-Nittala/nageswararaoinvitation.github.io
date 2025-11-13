@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Housewarming Invitation | Mr. Nageswara Rao & Mrs. Lakshmi</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #fff9f0, #ffe3b3);
+      color: #444;
+      text-align: center;
+    }
+
+    header {
+      background: #d8a35d;
+      color: white;
+      padding: 60px 20px 50px;
+      border-bottom-left-radius: 50% 10%;
+      border-bottom-right-radius: 50% 10%;
+    }
+
+    header h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.1em;
+      font-weight: 300;
+    }
+
+    section {
+      background: #fff;
+      margin: 30px auto;
+      padding: 20px;
+      border-radius: 12px;
+      width: 90%;
+      max-width: 650px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      color: #b45d00;
+      margin-bottom: 10px;
+    }
+
+    .details p {
+      line-height: 1.8;
+      font-size: 1.05em;
+    }
+
+    .highlight {
+      color: #b45d00;
+      font-weight: 600;
+    }
+
+    .telugu {
+      font-family: 'Noto Sans Telugu', sans-serif;
+      font-size: 1.1em;
+      color: #b45d00;
+      margin-top: 10px;
+    }
+
+    a.map-link {
+      display: inline-block;
+      margin-top: 10px;
+      background: #b45d00;
+      color: #fff;
+      padding: 10px 15px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    a.map-link:hover {
+      background: #8c4300;
+    }
+
+    footer {
+      margin-top: 40px;
+      background: #d8a35d;
+      color: white;
+      padding: 25px;
+      border-top-left-radius: 50% 10%;
+      border-top-right-radius: 50% 10%;
+    }
+
+    .countdown {
+      font-size: 1.3em;
+      font-weight: 600;
+      color: #b45d00;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>🏠 Gruhapravesam Invitation 🪔</h1>
+    <p><strong>Mr. Nageswara Rao & Mrs. Lakshmi</strong><br>
+    cordially invite you and your family to grace the occasion of their<br>
+    <strong>Housewarming Ceremony</strong></p>
+  </header>
+
+  <section class="details">
+    <h2>📅 Dates & Schedule</h2>
+    <p><span class="highlight">15th November 2025</span><br>
+      Gruhapravesam from <strong>9:00 PM</strong> onwards<br>
+      Satyanarayana Vratham from <strong>10:00 PM</strong> onwards
+    </p>
+
+    <p><span class="highlight">16th November 2025</span><br>
+      Ganapathi Homam from <strong>8:00 AM</strong> onwards<br>
+      Followed by Lunch from <strong>12:00 PM</strong> onwards
+    </p>
+  </section>
+
+  <section class="details">
+    <h2>📍 Venue</h2>
+    <p><strong>K.D.R Layout</strong><br>
+      Konthamuru to Katheru Road,<br>
+      Near Brahmana Agraharam,<br>
+      Konthamuru, Rajahmundry Rural – 533101
+    </p>
+    <a class="map-link" href="https://maps.app.goo.gl/uxtKqvpauVzjQk9EA?g_st=ipc" target="_blank">📍 View on Google Maps</a>
+  </section>
+
+  <section class="details">
+    <h2>💐 With Best Compliments</h2>
+    <p>The Entire Family of<br>
+      <strong>Mr. Nageswara Rao & Mrs. Lakshmi</strong>
+    </p>
+    <p class="telugu">మాకు మీ రాక అత్యంత ముఖ్యమైనది 💛</p>
+  </section>
+
+  <footer>
+    <p>We look forward to your gracious presence and blessings 🙏</p>
+    <div class="countdown" id="countdown"></div>
+  </footer>
+
+  <script>
+    // Countdown to 15th November 2025, 9:00 PM
+    const eventDate = new Date("Nov 15, 2025 21:00:00").getTime();
+    const timer = setInterval(() => {
+      const now = new Date().getTime();
+      const diff = eventDate - now;
+
+      if (diff < 0) {
+        clearInterval(timer);
+        document.getElementById("countdown").innerHTML = "🎉 The ceremony has begun!";
+        return;
+      }
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+
+      document.getElementById("countdown").innerHTML =
+        `⏳ ${days} days ${hours} hrs ${minutes} mins left`;
+    }, 1000);
+  </script>
+
+</body>
+</html>
